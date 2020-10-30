@@ -64,29 +64,38 @@ def one(input1, input2):
 
 
 def two(input):
+    txt = input.lower()
+    idk = txt.split('bert')
+    if len(idk) == 3:
+        return idk[1]
     return ""
 
     # <QUESTION 3>
-
 # given a number
-    # if this number is divisible by 3 return "fizz"
-    # if this number is divisible by 5 return "buzz"
-    # if this number is divisible by both 3 and 5 return "fizzbuzz"
-    # if this number is not divisible by 3 or 5 return "null"
+# if this number is divisible by 3 return "fizz"
+# if this number is divisible by 5 return "buzz"
+# if this number is divisible by both 3 and 5 return "fizzbuzz"
+# if this number is not divisible by 3 or 5 return "null"
 
 # <EXAMPLES>
 
-    # three(3) → "fizz"
-    # three(10) → "buzz"
-    # three(15) → "fizzbuzz"
-    # three(8) → "null"
+# three(3) → "fizz"
+# three(10) → "buzz"
+# three(15) → "fizzbuzz"
+# three(8) → "null"
 
-    # <HINT>
+# <HINT>
 
-    # No Hints for this question
+# No Hints for this question
 
 
 def three(arg1):
+    if arg1 % 3 == 0 and arg1 % 5 == 0:
+        return 'fizzbuzz'
+    elif arg1 % 5 == 0:
+        return 'buzz'
+    elif arg1 % 3 == 0:
+        return 'fizz'
     return "null"
 
     # <QUESTION 4>
@@ -113,9 +122,15 @@ def three(arg1):
 
 
 def four(arg1):
-    return 0
+    num_list = arg1.split(' ')
+    final_list = []
+    for num in num_list:
+        digits = [int(x) for x in num]
+        final_list.append(sum(digits))
+    return max(final_list)
 
-    # <QUESTION 5>
+
+# <QUESTION 5>
 
 # Given a large string that represents a csv, the structure of each record will be as follows:
 
@@ -125,41 +140,50 @@ def four(arg1):
 
 # For each record, if it is not encrypted, return the names of the owners of the files in a String Array.
 # Do not include duplicate names.
-    # If all records are encrypted, return an empty Array.
+# If all records are encrypted, return an empty Array.
 
 # <EXAMPLES>
 
 # five("Jeff,random.py,False,1445") → ["Jeff"]
-    # five("Bert,numberGen.py,True,1447,Bert,integers.py,True,1318,Jeff,floats.py,False,1445") → ["Jeff"]
-    # five("Bert,boolean.py,False,1447,Bert,conditions.py,False,1318,Jeff,loops.py,False,1445") → ["Bert","Jeff"]
+# five("Bert,numberGen.py,True,1447,Bert,integers.py,True,1318,Jeff,floats.py,False,1445") → ["Jeff"]
+# five("Bert,boolean.py,False,1447,Bert,conditions.py,False,1318,Jeff,loops.py,False,1445") → ["Bert","Jeff"]
 # five("Bert,prime.py,True,1447,Bert,ISBN.py,False,1318,Jeff,OOP.py,False,1445") → ["Bert","Jeff"]
 
-    # <HINT>
+# <HINT>
 
-    # Dont't forget, False is a String, not a Boolean value in the Tests above.
+# Dont't forget, False is a String, not a Boolean value in the Tests above.
 
-    # help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
+# help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
 
 def five(input):
-    return []
+    record = input.split(',')
+    owners = []
+    for i in range(0, len(record), 4):
+        rec = (record[i:i+4])
+        print(rec[2])
+        if rec[2] == 'False':
+            owners.append(rec[0])
+    owners = list(dict.fromkeys(owners))
+    return(owners)
 
-    # <QUESTION 6>
+
+# <QUESTION 6>
 
 # There is a well known mnemonic which goes "I before E, except after C", which is used to determine which order "ei" or "ie" should be in a word.
 
 # Write a function which returns the boolean True if a string follows the mnemonic, and returns the boolean False if not.
 
-    # <EXAMPLES>
+# <EXAMPLES>
 
 # six("ceiling") → True
 # six("believe") → True
 # six("glacier") → False
 # six("height") → False
 
-    # <HINT>
+# <HINT>
 
-    # Step through the logic here in order to solve the problem, you may find help(range) helpful.
+# Step through the logic here in order to solve the problem, you may find help(range) helpful.
 
 
 def six(input):
