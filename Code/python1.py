@@ -187,23 +187,30 @@ def five(input):
 
 
 def six(input):
-    # for index in range(input):
-    # 	if input
-    return False
+    for index in range(len(input)-2):
+        if input[index] == 'c':
+            if input[index + 1] == 'i' and input[index+2] == 'e':
+                return False
+            else:
+                return True
+        elif input[index] == 'e' and input[index+1] == 'i':
+            return False
+    return True
 
-    # <QUESTION 7>
 
-    # Write a function which returns the integer number of vowels in a given string.
-    # You should ignore case.
+# <QUESTION 7>
 
-    # <EXAMPLES>
+# Write a function which returns the integer number of vowels in a given string.
+# You should ignore case.
 
-    # seven("Hello") → 2
-    # seven("hEelLoooO") → 6
+# <EXAMPLES>
 
-    # <HINTS>
+# seven("Hello") → 2
+# seven("hEelLoooO") → 6
 
-    # How do we ignore case in a String? help(str) may offer some insight.
+# <HINTS>
+
+# How do we ignore case in a String? help(str) may offer some insight.
 
 
 def seven(input):
