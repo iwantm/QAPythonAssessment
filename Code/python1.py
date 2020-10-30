@@ -259,24 +259,32 @@ def eight(input):
 
 
 def nine(inputString, char):
+    inputString = inputString.replace(" ", "")
+    if char in inputString:
+        return(inputString.index(char)+1)
+
     return -1
 
-    # <QUESTION 10>
 
-    # Given a string, int and a char, return a boolean value if the 'nth'
-    # (represented by the int provided) char of the String supplied is the same as the char supplied.
-    # The int provided will NOT always be less than than the length of the String.
-    # IGNORE case and Whitespace.
+nine("This is a Sentence", "S")
+nine("This is a Sentence", "s")
+nine("Fridge for sale", "z")
+# <QUESTION 10>
 
-    # <EXAMPLES>
+# Given a string, int and a char, return a boolean value if the 'nth'
+# (represented by the int provided) char of the String supplied is the same as the char supplied.
+# The int provided will NOT always be less than than the length of the String.
+# IGNORE case and Whitespace.
 
-    # ten("The",2,'h') → True
-    # ten("AAbb",1,'b') → False
-    # ten("Hi-There",10,'e') → False
+# <EXAMPLES>
 
-    # <HINT>
+# ten("The",2,'h') → True
+# ten("AAbb",1,'b') → False
+# ten("Hi-There",10,'e') → False
 
-    # How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
+# <HINT>
+
+# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
 
 
 def ten(string, int, char):
