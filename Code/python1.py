@@ -187,6 +187,8 @@ def five(input):
 
 
 def six(input):
+    # for index in range(input):
+    # 	if input
     return False
 
     # <QUESTION 7>
@@ -205,7 +207,13 @@ def six(input):
 
 
 def seven(input):
-    return 0
+    input = input.lower()
+    vowels = ["a", "e", "i", "o", "u"]
+    count = 0
+    for letter in input:
+        if letter in vowels:
+            count += 1
+    return count
 
     # <QUESTION 8>
 
