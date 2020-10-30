@@ -285,4 +285,10 @@ def nine(inputString, char):
 
 
 def ten(string, int, char):
+    index = int-1
+    string = string.lower()
+    string = string.replace(' ', '')
+    if int < len(string):
+        if string[index] == char:
+            return True
     return False
