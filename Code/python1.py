@@ -266,9 +266,6 @@ def nine(inputString, char):
     return -1
 
 
-nine("This is a Sentence", "S")
-nine("This is a Sentence", "s")
-nine("Fridge for sale", "z")
 # <QUESTION 10>
 
 # Given a string, int and a char, return a boolean value if the 'nth'
