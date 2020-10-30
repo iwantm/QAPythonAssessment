@@ -232,25 +232,30 @@ def seven(input):
 
 
 def eight(input):
-    return 1
+    nums = list(range(1, input+1))
+    output = 1
+    for number in nums:
+        output *= number
+    return output
 
-    # <QUESTION 9>
 
-    # Given a string and a char, returns the position in the String where the char first appears.
-    # Ensure the positions are numbered correctly, please refer to the examples for guidance.
-    # DO NOT ignore case
-    # IGNORE whitespace
-    # If the char does not occur, return the number -1.
+# <QUESTION 9>
 
-    # <EXAMPLES>
+# Given a string and a char, returns the position in the String where the char first appears.
+# Ensure the positions are numbered correctly, please refer to the examples for guidance.
+# DO NOT ignore case
+# IGNORE whitespace
+# If the char does not occur, return the number -1.
 
-    # nine("This is a Sentence","s") → 4
-    # nine("This is a Sentence","S") → 8
-    # nine("Fridge for sale","z") → -1
+# <EXAMPLES>
 
-    # <HINT>
+# nine("This is a Sentence","s") → 4
+# nine("This is a Sentence","S") → 8
+# nine("Fridge for sale","z") → -1
 
-    # Take a look at the documentation for Strings, List and range.
+# <HINT>
+
+# Take a look at the documentation for Strings, List and range.
 
 
 def nine(inputString, char):
