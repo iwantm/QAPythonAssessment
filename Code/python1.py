@@ -37,8 +37,7 @@ def one(input1, input2):
         return input1 + ' ' + input2
     elif len(input1) > len(input2):
         return input1
-    else:
-        return input2
+    return input2
 
     # <QUESTION 2>
 
@@ -65,9 +64,9 @@ def one(input1, input2):
 
 def two(input):
     txt = input.lower()
-    idk = txt.split('bert')
-    if len(idk) == 3:
-        return idk[1]
+    text_list = txt.split('bert')
+    if txt.count('bert') == 2:
+        return text_list[1]
     return ""
 
     # <QUESTION 3>
